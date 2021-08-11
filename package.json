@@ -81,7 +81,7 @@
         "inflight": "^1.0.6",
         "inherits": "^2.0.4",
         "internal-slot": "^1.0.3",
-        "is-arrayish": "^0.2.1",
+        "is-arrayish": "^0.3.0",
         "is-bigint": "^1.0.3",
         "is-boolean-object": "^1.1.2",
         "is-callable": "^1.2.4",
