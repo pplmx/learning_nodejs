@@ -175,7 +175,7 @@
         "tslib": "^1.14.1",
         "tsutils": "^3.21.0",
         "type-check": "^0.4.0",
-        "type-fest": "^0.20.2",
+        "type-fest": "^0.21.0",
         "typescript": "^4.3.5",
         "unbox-primitive": "^1.0.1",
         "uri-js": "^4.4.1",
