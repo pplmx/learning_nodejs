@@ -1,9 +1,28 @@
-import { createServer } from 'http'
-import { LOG } from './log.js'
+import Koa from 'koa'
+import http from 'http'
+import socket from 'socket.io'
+import { registerRouter } from './router/loader.js'
 
-createServer(function (request, response) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' })
-    response.end('Hello World\n')
-}).listen(8888)
+const app = new Koa()
+const server = http.createServer(app.callback())
+const io = socket(server)
 
-LOG.info('Server running at http://127.0.0.1:8888/')
+io.on('connection', client => {
+    // catch the message from the client
+    // the frontend: io.send(message)
+    client.on('message', async (message) => {
+    })
+
+    // catch the custom info from the client
+    // the frontend: io.emit('xxx', message);
+    client.on('xxx', async (message) => {
+    })
+
+    // listen the close from the client
+    client.on('disconnect', async () => {
+    })
+})
+
+app.use(registerRouter())
+
+server.listen(3000)
