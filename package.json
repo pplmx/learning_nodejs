@@ -71,7 +71,7 @@
         "graceful-fs": "^4.2.8",
         "has": "^1.0.3",
         "has-bigints": "^1.0.1",
-        "has-flag": "^4.0.0",
+        "has-flag": "^5.0.0",
         "has-symbols": "^1.0.2",
         "has-tostringtag": "^1.0.0",
         "hosted-git-info": "^2.8.9",
