@@ -1,11 +1,11 @@
 import Koa from 'koa'
-import http from 'http'
-import socket from 'socket.io'
+import { createServer } from 'http'
+import { Server } from 'socket.io'
 import { registerRouter } from './router/loader.js'
 
 const app = new Koa()
-const server = http.createServer(app.callback())
-const io = socket(server)
+const server = createServer(app.callback())
+const io = new Server(server)
 
 io.on('connection', client => {
     // catch the message from the client
@@ -25,4 +25,6 @@ io.on('connection', client => {
 
 app.use(registerRouter())
 
-server.listen(3000)
+server.listen(3000, () => {
+    console.log('App is listening on 3000')
+})

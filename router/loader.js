@@ -1,6 +1,8 @@
-const compose = require('koa-compose')
-const glob = require('glob')
-const { resolve } = require('path')
+import compose from 'koa-compose'
+import glob from 'glob'
+import { resolve } from 'path'
+
+const __dirname = resolve()
 
 export const registerRouter = () => {
     const routers = []
