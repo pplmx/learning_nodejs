@@ -16,7 +16,7 @@
         "array-union": "^3.0.0",
         "array.prototype.flat": "^1.2.4",
         "astral-regex": "^2.0.0",
-        "balanced-match": "^1.0.2",
+        "balanced-match": "^2.0.0",
         "brace-expansion": "^2.0.0",
         "braces": "^3.0.2",
         "call-bind": "^1.0.2",
