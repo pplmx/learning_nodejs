@@ -75,7 +75,7 @@
         "has-symbols": "^1.0.2",
         "has-tostringtag": "^1.0.0",
         "hosted-git-info": "^2.8.9",
-        "ignore": "^4.0.6",
+        "ignore": "^5.0.0",
         "import-fresh": "^3.3.0",
         "imurmurhash": "^0.1.4",
         "inflight": "^1.0.6",
