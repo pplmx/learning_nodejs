@@ -74,7 +74,7 @@
         "has-flag": "^4.0.0",
         "has-symbols": "^1.0.2",
         "has-tostringtag": "^1.0.0",
-        "hosted-git-info": "^2.8.9",
+        "hosted-git-info": "^4.0.0",
         "ignore": "^4.0.6",
         "import-fresh": "^3.3.0",
         "imurmurhash": "^0.1.4",
