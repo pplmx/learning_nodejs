@@ -57,7 +57,7 @@
         "fastq": "^1.11.1",
         "file-entry-cache": "^6.0.1",
         "fill-range": "^7.0.1",
-        "find-up": "^2.1.0",
+        "find-up": "^5.0.0",
         "flat-cache": "^3.0.4",
         "flatted": "^3.2.2",
         "fs.realpath": "^1.0.0",
