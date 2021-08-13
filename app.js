@@ -1,9 +1,10 @@
-import Koa from 'koa'
-import { createServer } from 'http'
-import { Server } from 'socket.io'
-import { registerRouter } from './router/loader.js'
-
+// import { registerRouter } from './router/loader.js'
+const Koa = require('koa')
 const app = new Koa()
+const { createServer } = require('http')
+const { Server } = require('socket.io')
+const { registerRouter } = require('./router/loader')
+
 const server = createServer(app.callback())
 const io = new Server(server)
 
@@ -23,6 +24,7 @@ io.on('connection', client => {
     })
 })
 
+// register all routes
 app.use(registerRouter())
 
 server.listen(3000, () => {

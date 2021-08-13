@@ -1,7 +1,7 @@
 /*
 * LogHelper
 */
-import * as winston from 'winston'
+const winston = require('winston')
 
 export const LOG = winston.createLogger({
     level: 'info',

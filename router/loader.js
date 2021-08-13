@@ -1,17 +1,17 @@
-import compose from 'koa-compose'
-import glob from 'glob'
-import { resolve } from 'path'
+const compose = require('koa-compose')
+const glob = require('glob')
+const { resolve } = require('path')
 
-const __dirname = resolve()
-
-export const registerRouter = () => {
+const registerRouter = () => {
     const routers = []
     glob.sync(resolve(__dirname, './', '**/*.js'))
-        .filter(value => (value.indexOf('loader.js') === -1))
-        // eslint-disable-next-line array-callback-return
-        .map(router => {
-            routers.push(require(router).routes())
-            routers.push(require(router).allowedMethods())
+        .filter(file => (file.indexOf('loader.js') === -1))
+        .map(routerFile => {
+            const { router } = require(routerFile)
+            routers.push(router.routes())
+            routers.push(router.allowedMethods())
         })
     return compose(routers)
 }
+
+module.exports = { registerRouter }

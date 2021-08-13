@@ -1,12 +1,12 @@
-import Router from 'koa-router'
+const Router = require('@koa/router')
 
-const bookRouter = new Router()
+const router = new Router()
 
-bookRouter.prefix('book')
+router.prefix('book')
 
-bookRouter.get('/', async (ctx) => {
+router.get('/', async (ctx) => {
     ctx.type = 'html'
-    ctx.body = '<h1>hello world!</h1>'
+    ctx.body = '<h1>hello world! Book.</h1>'
 })
 
-export { bookRouter }
+module.exports = { router }
