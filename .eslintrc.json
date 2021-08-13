@@ -7,17 +7,34 @@
     "extends": [
         "standard"
     ],
-    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 12
     },
-    "plugins": [
-        "@typescript-eslint"
-    ],
     "rules": {
+        // 0 is "off", 1 is "warn", 2 is "error"
         "indent": [
-            "error",
+            2,
             4
-        ]
+        ],
+        "quotes": [
+            2,
+            "single"
+        ],
+        "linebreak-style": [
+            2,
+            "unix"
+        ],
+        "prefer-arrow-callback": 1,
+        "eol-last": 2,
+        "no-extra-bind": 2,
+        "no-extra-boolean-cast": 2,
+        "no-extra-parens": 2,
+        "no-extra-semi": 2,
+        "no-mixed-spaces-and-tabs": [
+            2,
+            false
+        ],
+        "no-multi-spaces": 2,
+        "no-func-assign": 2
     }
 }
