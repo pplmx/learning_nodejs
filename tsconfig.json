@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "removeComments": true,
+        "noEmitOnError": true,
+        "allowJs": true,
+        "module": "ES2020",
+        "target": "ES2020",
+        "outDir": "./built"
+    },
+    "include": [
+        "./demo",
+        "./router",
+        "./utils",
+        "./app.js"
+    ]
+}
+//"compilerOptions": {
+//    // 不允许隐式的any类型
+//    "noImplicitAny": true,
+//    // 删除注释,
+//    "removeComments": true,
+//    // 发送错误时不输出任何文件
+//    "noEmitOnError": true,
+//    // 开启所有严格的类型检查
+//    "strict": true,
+//    // 在代码中注入 'use strict'
+//    "alwaysStrict": true,
+//    // 允许编译器编译JS，JSX文件
+//    "allowJs": true,
+//    // 允许在JS文件中报错，通常与allowJS一起使用
+//    "checkJs": true,
+//    // 不允许this有隐式的any类型
+//    "noImplicitThis": true,
+//    // 检查只声明、未使用的局部变量(只提示不报错)
+//    "noUnusedLocals": true,
+//    // 检查未使用的函数参数(只提示不报错)
+//    "noUnusedParameters": true,
+//    "module": "ES2020",
+//    "target": "ES2020",
+//    "moduleResolution": "Node",
+//    "outDir": "./built"
+//}
