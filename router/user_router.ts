@@ -1,4 +1,6 @@
-import * as Router from '@koa/router'
+// @ts-ignore
+const Router = require('@koa/router')
+// @ts-ignore
 const router = new Router()
 
 router.prefix('/user')
