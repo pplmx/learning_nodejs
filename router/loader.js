@@ -6,7 +6,7 @@ const registerRouter = () => {
     const routers = []
     glob.sync(resolve(__dirname, './', '**/*.js'))
         .filter(file => (file.indexOf('loader.js') === -1))
-        .map(routerFile => {
+        .forEach(routerFile => {
             const { router } = require(routerFile)
             routers.push(router.routes())
             routers.push(router.allowedMethods())

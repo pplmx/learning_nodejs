@@ -1,4 +1,3 @@
-// import { registerRouter } from './router/loader.js'
 const Koa = require('koa')
 const app = new Koa()
 const { createServer } = require('http')
