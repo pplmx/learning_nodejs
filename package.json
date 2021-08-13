@@ -2,7 +2,7 @@
     "name": "learning_nodejs",
     "version": "1.0.0",
     "description": "Learning NodeJS in Action",
-    "main": "app.js",
+    "main": "app.ts",
     "dependencies": {
         "@koa/router": "^10.1.0",
         "cross-env": "^7.0.3",
@@ -26,7 +26,7 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "cross-env NODE_ENV=development supervisor app.js"
+        "dev": "cross-env NODE_ENV=development supervisor app.ts"
     },
     "repository": {
         "type": "git",
