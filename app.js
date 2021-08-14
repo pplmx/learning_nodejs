@@ -7,19 +7,23 @@ const { registerRouter } = require('./router/loader')
 const server = createServer(app.callback())
 const io = new Server(server)
 
-io.on('connection', client => {
+io.on('connection', socket => {
+    console.log(`${socket.id} has connected. Address: ${socket.handshake.address}`)
+    socket.emit('send', `hello, ${socket.handshake.address}`)
+
     // catch the message from the client
     // the frontend: io.send(message)
-    client.on('message', async (message) => {
+    socket.on('message', async (message) => {
     })
 
     // catch the custom info from the client
     // the frontend: io.emit('xxx', message);
-    client.on('xxx', async (message) => {
+    socket.on('xxx', async (message) => {
     })
 
     // listen the close from the client
-    client.on('disconnect', async () => {
+    socket.on('disconnect', async () => {
+        console.log('Disconnection with <<<<<<<<<')
     })
 })
 
