@@ -5,6 +5,16 @@ const { registerRouter } = require('./router/loader')
 const { listener } = require('./scheduler/scheduler')
 const { LOG } = require('./utils/log')
 
+// logger
+app.use(async (ctx, next) => {
+    const start = Date.now()
+    const nsBegin = process.hrtime.bigint()
+    await next()
+    const ms = Date.now() - start
+    const ns = process.hrtime.bigint() - nsBegin
+    LOG.info(`[${ctx.method}] ${ctx.url} - ${ms}ms - ${ns}ns`)
+})
+
 // body parser
 const koaBody = require('koa-body')
 app.use(koaBody({
