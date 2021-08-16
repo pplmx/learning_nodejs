@@ -1,27 +1,40 @@
 /*
 * LogHelper
 */
-const winston = require('winston')
+const { createLogger, format, transports } = require('winston')
+const { combine, timestamp, label, printf } = format
 
-export const LOG = winston.createLogger({
+const customLogFormat = printf(({ level, message, label, timestamp }) => {
+    return `[${label}] ${timestamp} ${level}: ${message}`
+})
+
+const customLogCombine = combine(
+    format.colorize(),
+    label({ label: 'Learning' }),
+    timestamp({
+        format: 'YYYY-MM-DD HH:mm:ss.SSS'
+    }),
+    customLogFormat
+)
+
+const LOG = createLogger({
     level: 'info',
-    format: winston.format.json(),
-    defaultMeta: { service: 'user-service' },
+    format: customLogCombine,
     transports: [
         //
         // - Write all logs with level `error` and below to `error.log`
         // - Write all logs with level `info` and below to `info.log`
         // - Write all logs with level `debug` and below to `debug.log`
         //
-        new winston.transports.File({
+        new transports.File({
             filename: 'error.log',
             level: 'error'
         }),
-        new winston.transports.File({
+        new transports.File({
             filename: 'info.log',
             level: 'info'
         }),
-        new winston.transports.File({ filename: 'debug.log' })
+        new transports.File({ filename: 'debug.log' })
     ]
 })
 
@@ -30,7 +43,9 @@ export const LOG = winston.createLogger({
 // `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
 //
 if (process.env.NODE_ENV !== 'production') {
-    LOG.add(new winston.transports.Console({
-        format: winston.format.simple()
+    LOG.add(new transports.Console({
+        format: customLogCombine
     }))
 }
+
+module.exports = { LOG }

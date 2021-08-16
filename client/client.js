@@ -1,8 +1,9 @@
 const { io } = require('socket.io-client')
+const { LOG } = require('../utils/log')
 const socket = io('http://127.0.0.1:3000')
 
 socket.on('send', data => {
-    console.log(data)
+    LOG.info(data)
 })
 
 socket.emit('message', {
