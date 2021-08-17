@@ -5,6 +5,7 @@ function listener(appServer) {
     const io = new Server(appServer)
     io.on('connection', socket => {
         LOG.info(`Client: ${socket.handshake.address}. Socket ${socket.id} was created.`)
+        socket.emit('connected')
         socket.emit('send', `hello, ${socket.handshake.address}`)
 
         // catch the message from the client
