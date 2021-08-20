@@ -1,10 +1,25 @@
 /*
 * LogHelper
 */
-const { createLogger, format, transports } = require('winston')
-const { combine, timestamp, label, printf } = format
+const {
+    createLogger,
+    format,
+    transports
+} = require('winston')
 
-const customLogFormat = printf(({ level, message, label, timestamp }) => {
+const {
+    combine,
+    timestamp,
+    label,
+    printf
+} = format
+
+const customLogFormat = printf(({
+    level,
+    message,
+    label,
+    timestamp
+}) => {
     return `[${label}] ${timestamp} ${level}: ${message}`
 })
 

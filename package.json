@@ -14,6 +14,8 @@
         "winston": "^3.3.3"
     },
     "devDependencies": {
+        "@babel/core": "7.15.0",
+        "@babel/eslint-parser": "7.15.0",
         "eslint": "7.32.0",
         "eslint-config-standard": "16.0.3",
         "eslint-plugin-import": "2.24.0",

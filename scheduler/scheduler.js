@@ -1,7 +1,7 @@
 const { Server } = require('socket.io')
 const { LOG } = require('../utils/log')
 
-function listener (appServer) {
+function listener(appServer) {
     const io = new Server(appServer)
     io.on('connection', socket => {
         LOG.info(`Client: ${socket.handshake.address}. Socket ${socket.id} was created.`)

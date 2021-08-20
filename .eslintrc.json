@@ -7,6 +7,7 @@
     "extends": [
         "standard"
     ],
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
         "ecmaVersion": 12
     },
@@ -16,13 +17,26 @@
             2,
             4
         ],
+        "linebreak-style": [
+            2,
+            "unix"
+        ],
         "quotes": [
             2,
             "single"
         ],
-        "linebreak-style": [
+        "semi": [
             2,
-            "unix"
+            "never"
+        ],
+        "camelcase": 0,
+        "space-before-function-paren": [
+            2,
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always"
+            }
         ],
         "prefer-arrow-callback": 1,
         "eol-last": 2,
