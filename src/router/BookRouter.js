@@ -1,5 +1,6 @@
-const Router = require('@koa/router')
-const BookController = require('../controller/BookController')
+import Router from '@koa/router'
+import { BookController } from '../controller/BookController'
+
 const router = new Router()
 
 router.prefix('/api/v1/books')

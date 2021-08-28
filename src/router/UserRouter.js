@@ -1,5 +1,6 @@
-const Router = require('@koa/router')
-const UserController = require('../controller/UserController')
+import Router from '@koa/router'
+import { UserController } from '../controller/UserController'
+
 const router = new Router()
 
 router.prefix('/api/v1/users')

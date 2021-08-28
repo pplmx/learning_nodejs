@@ -1,7 +1,7 @@
-const { Server } = require('socket.io')
-const { LOG } = require('../utils/log')
+import { Server } from 'socket.io'
+import { LOG } from '../utils/log'
 
-function listener(appServer) {
+export default function listener(appServer) {
     const io = new Server(appServer)
     io.on('connection', socket => {
         LOG.info(`Client: ${socket.handshake.address}. Socket ${socket.id} was created.`)
@@ -24,5 +24,3 @@ function listener(appServer) {
         })
     })
 }
-
-module.exports = { listener }

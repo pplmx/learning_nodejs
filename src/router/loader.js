@@ -1,8 +1,8 @@
-const compose = require('koa-compose')
-const glob = require('glob')
-const { resolve } = require('path')
+import compose from 'koa-compose'
+import glob from 'glob'
+import { resolve } from 'path'
 
-const registerRouter = () => {
+export const registerRouter = () => {
     const routers = []
     glob.sync(resolve(__dirname, './', '**/*.js'))
         .filter(file => (file.indexOf('loader.js') === -1))
@@ -13,5 +13,3 @@ const registerRouter = () => {
         })
     return compose(routers)
 }
-
-module.exports = { registerRouter }

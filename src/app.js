@@ -1,9 +1,13 @@
-const Koa = require('koa')
+import Koa from 'koa'
+import { createServer } from 'http'
+import { registerRouter } from './router/loader'
+import listener from './scheduler/scheduler'
+import { LOG } from './utils/log'
+
+// body parser
+import koaBody from 'koa-body'
+
 const app = new Koa()
-const { createServer } = require('http')
-const { registerRouter } = require('./router/loader')
-const { listener } = require('./scheduler/scheduler')
-const { LOG } = require('./utils/log')
 
 // logger
 app.use(async (ctx, next) => {
@@ -14,9 +18,6 @@ app.use(async (ctx, next) => {
     const ns = process.hrtime.bigint() - nsBegin
     LOG.info(`[${ctx.method}] ${ctx.status} ${ctx.url} - ${ms}ms - ${ns}ns`)
 })
-
-// body parser
-const koaBody = require('koa-body')
 app.use(koaBody({
     multipart: true,
     // Patch request body to Node's ctx.req

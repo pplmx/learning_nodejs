@@ -1,11 +1,7 @@
 /*
 * LogHelper
 */
-const {
-    createLogger,
-    format,
-    transports
-} = require('winston')
+import { createLogger, format, transports } from 'winston'
 
 const {
     combine,
@@ -23,7 +19,15 @@ const customLogFormat = printf(({
     return `[${label}] ${timestamp} ${level}: ${message}`
 })
 
-const customLogCombine = combine(
+const fileLogCombine = combine(
+    label({ label: 'Learning' }),
+    timestamp({
+        format: 'YYYY-MM-DD HH:mm:ss.SSS'
+    }),
+    customLogFormat
+)
+
+const consoleLogCombine = combine(
     format.colorize(),
     label({ label: 'Learning' }),
     timestamp({
@@ -34,7 +38,7 @@ const customLogCombine = combine(
 
 const LOG = createLogger({
     level: 'info',
-    format: customLogCombine,
+    format: fileLogCombine,
     transports: [
         //
         // - Write all logs with level `error` and below to `error.log`
@@ -59,7 +63,7 @@ const LOG = createLogger({
 //
 if (process.env.NODE_ENV !== 'production') {
     LOG.add(new transports.Console({
-        format: customLogCombine
+        format: consoleLogCombine
     }))
 }
 

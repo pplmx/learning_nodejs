@@ -1,5 +1,5 @@
-const { io } = require('socket.io-client')
-const { LOG } = require('../utils/log')
+import { io } from 'socket.io-client'
+import { LOG } from '../utils/log'
 const socket = io('http://127.0.0.1:3000')
 
 socket.on('connected', () => {

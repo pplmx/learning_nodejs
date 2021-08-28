@@ -1,4 +1,4 @@
-class UserController {
+export class BookController {
     static async create(ctx) {
         ctx.body = {
             code: 0,
@@ -27,5 +27,3 @@ class UserController {
         }
     }
 }
-
-module.exports = UserController
