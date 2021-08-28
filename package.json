@@ -21,13 +21,13 @@
         "eslint-plugin-import": "2.24.2",
         "eslint-plugin-node": "11.1.0",
         "eslint-plugin-promise": "5.1.0",
-        "socket.io-client": "4.1.3",
-        "supervisor": "0.12.0"
+        "nodemon": "^2.0.12",
+        "socket.io-client": "4.1.3"
     },
     "scripts": {
         "format": "npx eslint --fix",
         "predev": "npm run format",
-        "dev": "cross-env NODE_ENV=development supervisor app.js",
+        "dev": "cross-env NODE_ENV=development nodemon app.js",
         "build": "cross-env NODE_ENV=production"
     },
     "repository": {
