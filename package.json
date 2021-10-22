@@ -4,13 +4,13 @@
     "description": "Learning NodeJS in Action",
     "main": "src/index.js",
     "dependencies": {
-        "@koa/router": "^10.1.0",
+        "@koa/router": "^10.1.1",
         "cross-env": "^7.0.3",
-        "glob": "^7.1.7",
-        "koa": "^2.13.1",
+        "glob": "^7.2.0",
+        "koa": "^2.13.4",
         "koa-body": "^4.2.0",
         "koa-compose": "^4.1.0",
-        "socket.io": "^4.1.3",
+        "socket.io": "^4.3.1",
         "winston": "^3.3.3"
     },
     "devDependencies": {
@@ -20,7 +20,6 @@
         "@babel/plugin-proposal-decorators": "7.15.8",
         "@babel/preset-env": "7.15.8",
         "@babel/register": "7.15.3",
-        "eslint": "8.0.1",
         "eslint-config-standard": "16.0.3",
         "eslint-plugin-import": "2.25.2",
         "eslint-plugin-node": "11.1.0",
