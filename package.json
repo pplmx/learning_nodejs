@@ -14,7 +14,8 @@
         "winston": "^3.3.3"
     },
     "devDependencies": {
-        "@babel/core": "7.15.8",
+        "@babel/cli": "^7.15.7",
+        "@babel/core": "^7.15.8",
         "@babel/eslint-parser": "7.15.8",
         "@babel/plugin-proposal-class-properties": "7.14.5",
         "@babel/plugin-proposal-decorators": "7.15.8",
@@ -31,7 +32,7 @@
         "format": "npx eslint --fix",
         "predev": "npm run format",
         "dev": "cross-env NODE_ENV=development nodemon src/index.js",
-        "build": "cross-env NODE_ENV=production"
+        "build": "cross-env NODE_ENV=production npx babel src -d build"
     },
     "repository": {
         "type": "git",
