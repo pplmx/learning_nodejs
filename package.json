@@ -21,7 +21,7 @@
         "@babel/plugin-proposal-decorators": "7.17.8",
         "@babel/preset-env": "7.16.11",
         "@babel/register": "7.17.7",
-        "eslint-config-standard": "16.0.3",
+        "eslint-config-standard": "17.0.0",
         "eslint-plugin-import": "2.26.0",
         "eslint-plugin-node": "11.1.0",
         "eslint-plugin-promise": "6.0.0",
